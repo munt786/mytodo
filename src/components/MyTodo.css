@@ -1,33 +1,44 @@
-.body{
+body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
-.main-container{
+
+.main-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(to bottom,lightblue,#555);
+    background: linear-gradient(to bottom, lightblue, #555);
     padding: 10px;
     gap: 20px;
+    transition: all 0.3s ease;
 }
-.input-container{
+
+.input-container {
     width: 40vw;
-    /* height: 40vh; */
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border: 0.2px solid rgb(255, 255, 255,0.7);
+    border: 0.2px solid rgba(255, 255, 255, 0.7);
     border-radius: 10px;
-    box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    transition: box-shadow 0.3s ease;
 }
-.input-container input,textarea{
+.input-container:hover {
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.input-container input,
+.input-container textarea {
     width: 100%;
     padding: 12px;
     border: none;
@@ -35,44 +46,65 @@
     font-size: 16px;
     outline: none;
     background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.input-container button{
+.input-container input:focus,
+.input-container textarea:focus {
+    background-color: #fff;
+    transform: scale(1.02);
+}
+
+.input-container button {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     color: white;
-    background-color: rgb(100,100,255);
+    background-color: rgb(100, 100, 255);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.input-container button:hover{
-    background-color: rgb(50,50,255);
+.input-container button:hover {
+    background-color: rgb(50, 50, 255);
+    transform: translateY(-2px);
 }
-.todo-container{
+
+.todo-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
     box-sizing: border-box;
+    padding-bottom: 40px;
 }
-.todo-box{
-    /* width: 100%; */
+
+.todo-box {
     width: 300px;
     flex: 1 1 250px;
     padding: 15px;
     border-radius: 10px;
     position: relative;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
-.todo-box .btn-complete{
+.todo-box:hover {
+    transform: scale(1.03);
+}
+
+.todo-box .btn-complete {
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
-.todo-box .btn-edit{
+
+.todo-box .btn-edit,
+.todo-box .btn-delete {
     width: 70px;
     border: none;
     border-radius: 10px;
@@ -80,34 +112,37 @@
     margin: 5px;
     font-weight: bold;
     color: white;
-    background-color: rgb(80,255,80);
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.todo-box .btn-edit:hover{
-    background-color: rgb(50,255,50);
+.todo-box .btn-edit {
+    background-color: rgb(80, 255, 80);
 }
-.todo-box .btn-delete{
-    width: 70px;
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(255,80,80);
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+.todo-box .btn-edit:hover {
+    background-color: rgb(50, 255, 50);
+    transform: translateY(-2px);
 }
-.todo-box .btn-delete:hover{
-    background-color: rgb(255,50,50);
+.todo-box .btn-delete {
+    background-color: rgb(255, 80, 80);
 }
-@media (max-width:600px){
-    .input-container{
+.todo-box .btn-delete:hover {
+    background-color: rgb(255, 50, 50);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 900px) {
+    .main-container {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .input-container {
         width: 90%;
+        padding: 20px;
     }
-    .todo-container{
-        height: 100vh;
-    }
-    .main-container{
-        height: 100%;
+    .todo-box {
+        width: 90%;
     }
 }
