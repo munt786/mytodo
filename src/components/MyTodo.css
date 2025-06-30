@@ -100,3 +100,8 @@
 .todo-box .btn-delete:hover{
     background-color: rgb(255,50,50);
 }
+@media (max-width:480px){
+    .input-container{
+        width: 90%;
+    }
+}
