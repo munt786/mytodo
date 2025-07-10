@@ -3,7 +3,6 @@ import './App.css'
 import MyTodo from './components/MyTodo'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

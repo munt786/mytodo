@@ -17,7 +17,7 @@ body {
 }
 
 .input-container {
-    width: 40vw;
+    width: 450px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -90,7 +90,7 @@ body {
     transition: transform 0.3s ease;
 }
 .todo-box:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
 }
 
 .todo-box .btn-complete {
@@ -138,8 +138,8 @@ body {
 
 @media screen and (max-width: 600px) {
     .input-container {
-        width: 90%;
-        padding: 20px;
+        width: 80%;
+        padding: 30px;
     }
     .todo-box {
         width: 90%;
